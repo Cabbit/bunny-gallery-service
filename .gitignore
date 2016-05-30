@@ -1,0 +1,6 @@
+config/config.yml
+dump.rdb
+coverage
+log
+/.bundle
+/db/*.sqlite3
