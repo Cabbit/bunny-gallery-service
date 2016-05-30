@@ -5,7 +5,6 @@ gem 'rack'
 gem 'grape'
 gem 'grape-swagger'
 gem 'rake'
-gem 'sqlite3'
 gem 'rubocop', require: false
 gem 'simplecov', require: false, group: :test
 gem 'configatron'
@@ -15,6 +14,11 @@ gem 'activerecord', require: 'active_record'
 gem 'grape-activerecord'
 gem 'grape-cache_control'
 gem 'puma'
+gem 'mysql2'
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 group :development do
   gem 'shotgun'

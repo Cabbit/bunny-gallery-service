@@ -74,6 +74,7 @@ GEM
     multi_xml (0.5.5)
     mustermann19 (0.4.3)
       enumerable-lazy
+    mysql2 (0.4.4)
     parser (2.3.1.0)
       ast (~> 2.2)
     powerpack (0.1.1)
@@ -138,6 +139,7 @@ DEPENDENCIES
   grape-cache_control
   grape-swagger
   jsonapi-serializers
+  mysql2
   pry
   puma
   rack
