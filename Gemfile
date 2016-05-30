@@ -1,6 +1,5 @@
 ruby '2.3.1'
 source 'https://rubygems.org'
-source 'http://rubygems.offsidegaming.com:8081'
 
 gem 'rack'
 gem 'grape'
@@ -15,6 +14,7 @@ gem 'jsonapi-serializers'
 gem 'activerecord', require: 'active_record'
 gem 'grape-activerecord'
 gem 'grape-cache_control'
+gem 'puma'
 
 group :development do
   gem 'shotgun'
