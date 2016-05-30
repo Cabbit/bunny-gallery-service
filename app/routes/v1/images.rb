@@ -1,7 +1,7 @@
 module Routes
   module V1
     class Images < Grape::API
-      version 'v1', using: :accept_version_header, vendor: 'offsidegaming'
+      version 'v1', using: :accept_version_header, vendor: 'cabbit'
       format :json
       content_type :json, 'application/json;charset=UTF-8'
 
