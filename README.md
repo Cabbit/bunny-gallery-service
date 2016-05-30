@@ -1,8 +1,12 @@
 # Bunny Gallery Service
+
+## Setup
+* gem install foreman
+
 ## Test setup
 * bundle install
 * db:test:prepare
 * rake test
 
 ## Running
-* rackup
+* foreman start
