@@ -16,10 +16,6 @@ gem 'grape-cache_control'
 gem 'puma'
 gem 'mysql2'
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
 group :development do
   gem 'shotgun'
 end
