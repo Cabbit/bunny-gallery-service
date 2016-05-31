@@ -6,7 +6,7 @@ module Routes
       format :json
       content_type :json, 'application/json;charset=UTF-8'
       rescue_from ActiveRecord::RecordNotFound do
-        error!({ error: 'No image found.' }, 404, 'Content-Type': 'text/error')
+        error!({ error: 'No image found.' }, 404, 'Content-Type' => 'text/error')
       end
 
       resource :images do
