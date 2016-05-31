@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require_relative '../../test_helper'
 
 class ApiV1ImagesTest < ApiV1TestCase

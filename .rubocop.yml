@@ -10,4 +10,4 @@ AllCops:
     - 'test/fixtures/**/*'
     - 'tmp/**/*'
     - 'db/**/*'
-  TargetRubyVersion: 1.9
+  TargetRubyVersion: 2.3

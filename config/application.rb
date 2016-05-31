@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require './config/environment'
 $LOAD_PATH.unshift Config.root.join('lib')
 
