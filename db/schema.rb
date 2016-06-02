@@ -14,9 +14,13 @@
 ActiveRecord::Schema.define(version: 20160530194208) do
 
   create_table "images", force: :cascade do |t|
-    t.string   "name",       limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",               limit: 255, null: false
+    t.string   "photo_file_name",    limit: 255, null: false
+    t.string   "photo_content_type", limit: 255, null: false
+    t.integer  "photo_file_size",    limit: 4,   null: false
+    t.datetime "photo_updated_at",               null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end

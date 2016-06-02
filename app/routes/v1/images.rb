@@ -18,6 +18,22 @@ module Routes
           serialize(images, is_collection: true)
         end
 
+        params do
+          requires :avatar, type: File
+        end
+        post do
+          # Parameter will be wrapped using Hashie:
+          params.avatar.filename # => 'avatar.png'
+          params.avatar.type     # => 'image/png'
+          params.avatar.tempfile # => #<File>
+
+          image = Image.new
+          image.name  = params.avatar.filename
+          image.photo = params.avatar
+          image.save
+          image.photo
+        end
+
         route_param :id do
           desc ''
           get do

@@ -16,6 +16,9 @@ gem 'grape-activerecord'
 gem 'grape-cache_control'
 gem 'puma'
 gem 'mysql2'
+gem 'paperclip'
+gem 'paperclip-rack', require: 'paperclip/rack'
+gem 'aws-sdk', '< 2.0'
 
 group :test do
   gem 'pry'
