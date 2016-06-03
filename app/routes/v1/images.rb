@@ -22,11 +22,6 @@ module Routes
           requires :avatar, type: File
         end
         post do
-          # Parameter will be wrapped using Hashie:
-          params.avatar.filename # => 'avatar.png'
-          params.avatar.type     # => 'image/png'
-          params.avatar.tempfile # => #<File>
-
           image = Image.new
           image.name  = params.avatar.filename
           image.photo = params.avatar
@@ -43,12 +38,20 @@ module Routes
             serialize(image, is_collection: false)
           end
 
-          get :image do
+          get :full_image do
             cache_control :public, max_age: 60
             content_type :jpg
 
             image = Image.find(params[:id])
             stream open(image.photo.url)
+          end
+
+          get :thumb do
+            cache_control :public, max_age: 60
+            content_type :jpg
+
+            image = Image.find(params[:id])
+            stream open(image.photo.url(:thumb))
           end
         end
       end

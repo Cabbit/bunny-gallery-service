@@ -20,8 +20,12 @@ gem 'paperclip'
 gem 'paperclip-rack', require: 'paperclip/rack'
 gem 'aws-sdk', '< 2.0'
 
-group :test do
+group :development do
   gem 'pry'
+  gem 'pry-remote'
+end
+
+group :test do
   gem 'rack-test', require: 'rack/test'
   gem 'database_cleaner'
 end
