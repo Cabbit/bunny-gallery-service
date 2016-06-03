@@ -4,6 +4,7 @@ $LOAD_PATH.unshift Config.root.join('lib')
 
 # Connect to database
 Grape::ActiveRecord.configure_from_file! Config.root.join('config', 'database.yml')
+ActiveRecord::Base.raise_in_transactional_callbacks = true
 
 # Load application
 [
