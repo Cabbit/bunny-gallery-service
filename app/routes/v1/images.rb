@@ -42,6 +42,14 @@ module Routes
             image = Image.find(params[:id])
             serialize(image, is_collection: false)
           end
+
+          get :image do
+            cache_control :public, max_age: 60
+            content_type :jpg
+
+            image = Image.find(params[:id])
+            stream open(image.photo.url)
+          end
         end
       end
     end
