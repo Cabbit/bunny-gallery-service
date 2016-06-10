@@ -18,4 +18,8 @@ test:
 
 production:
   adapter: mysql2
-  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  host: db
+  database: bunny
+  encoding: utf8
