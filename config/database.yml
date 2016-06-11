@@ -1,25 +1,21 @@
 default: &default
   adapter: mysql2
-  username: root
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: 127.0.0.1
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST"] %>
   encoding: utf8
 
 development:
   <<: *default
-  database: bunny-gallery-service-development
+  database: <%= ENV["DATABASE_DATABASE"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: bunny-gallery-service-test
+  database: <%= ENV["DATABASE_DATABASE"] %>
 
 production:
-  adapter: mysql2
-  username: <%= ENV["DATABASE_USERNAME"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
-  host: db
-  database: bunny
-  encoding: utf8
+  <<: *default
+  database: <%= ENV["DATABASE_DATABASE"] %>

@@ -2,7 +2,6 @@ FROM ruby:2.3.1
 MAINTAINER david.roy@cabbit.co.uk
 
 ENV REFRESHED_AT 2015-03-13
-ENV RACK_ENV=production
 
 # Update repo
 RUN apt-get -y update
@@ -23,4 +22,4 @@ RUN gem install foreman
 RUN bundle install
 
 # Run goliath in production mode
-CMD ["/bin/bash","-c", "bundle exec foreman start -e production"]
+CMD ["/bin/bash","-c", "bundle exec foreman start"]
