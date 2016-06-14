@@ -12,7 +12,7 @@ module Routes
       resource :images do
         desc ''
         get do
-          cache_control :public, max_age: 60
+          cache_control :public, max_age: 15
 
           images = Image.all
           serialize(images, is_collection: true)
@@ -51,7 +51,7 @@ module Routes
             content_type :jpg
 
             image = Image.find(params[:id])
-            stream open(image.photo.url(:thumb))
+            file open(image.photo.url(:thumb))
           end
         end
       end
